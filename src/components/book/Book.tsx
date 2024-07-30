@@ -79,7 +79,23 @@ pages.forEach((page) => {
 	useTexture.preload(`/textures/book-cover-roughness.jpg`);
 });
 
-const Page = ({ number, front, back, page, opened, bookClosed, ...props }) => {
+const Page = ({
+	number,
+	front,
+	back,
+	page,
+	opened,
+	bookClosed,
+	...props
+}: {
+	number: number;
+	front: string;
+	back: string;
+	page: number;
+	opened: boolean;
+	bookClosed: boolean;
+	[key: string]: any;
+}) => {
 	const [picture, picture2, pictureRoughness] = useTexture([
 		`/textures/${front}.jpg`,
 		`/textures/${back}.jpg`,
@@ -154,8 +170,11 @@ const Page = ({ number, front, back, page, opened, bookClosed, ...props }) => {
 		}
 
 		const emissiveIntensity = highlighted ? 0.22 : 0;
+		// @ts-expect-error
 		skinnedMeshRef.current.material[4].emissiveIntensity =
+			// @ts-expect-error
 			skinnedMeshRef.current.material[5].emissiveIntensity = MathUtils.lerp(
+				// @ts-expect-error
 				skinnedMeshRef.current.material[4].emissiveIntensity,
 				emissiveIntensity,
 				0.1
@@ -165,6 +184,8 @@ const Page = ({ number, front, back, page, opened, bookClosed, ...props }) => {
 			turnedAt.current = +new Date();
 			lastOpened.current = opened;
 		}
+
+		// @ts-expect-error
 		let turningTime = Math.min(400, new Date() - turnedAt.current) / 400;
 		turningTime = Math.sin(turningTime * Math.PI);
 
@@ -173,6 +194,7 @@ const Page = ({ number, front, back, page, opened, bookClosed, ...props }) => {
 			targetRotation += degToRad(number * 0.8);
 		}
 
+		// @ts-expect-error
 		const bones = skinnedMeshRef.current.skeleton.bones;
 		for (let i = 0; i < bones.length; i++) {
 			const target = i === 0 ? group.current : bones[i];
@@ -215,6 +237,7 @@ const Page = ({ number, front, back, page, opened, bookClosed, ...props }) => {
 	return (
 		<group
 			{...props}
+			// @ts-expect-error
 			ref={group}
 			onPointerEnter={(e) => {
 				e.stopPropagation();
@@ -244,8 +267,9 @@ export const Book = ({ ...props }) => {
 	const [delayedPage, setDelayedPage] = useState(page);
 
 	useEffect(() => {
-		let timeout;
+		let timeout: any;
 		const goToPage = () => {
+			// @ts-expect-error
 			setDelayedPage((delayedPage) => {
 				if (page === delayedPage) {
 					return delayedPage;
