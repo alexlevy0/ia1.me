@@ -3,20 +3,20 @@
 @tailwind components;
 @tailwind utilities;
 
-/* :root {
+:root {
 	--foreground-rgb: 0, 0, 0;
 	--background-start-rgb: 214, 219, 220;
 	--background-end-rgb: 255, 255, 255;
 	scrollbar-gutter: stable;
-} */
+}
 
 #root {
 	width: 100vw;
 	height: 100vh;
-	/* background: radial-gradient(#5a47ce, #232323 80%); */
+	background: radial-gradient(#5a47ce, #232323 80%);
 }
 
-body {
+/* body {
 	margin: 0;
 }
 
@@ -218,4 +218,4 @@ body {
 
 		opacity: 0.7;
 	}
-}
+} */

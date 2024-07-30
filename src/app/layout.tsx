@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
 	title: 'IA1.me',
-	description: 'AI-Powered Non-Realistic Tamagotchi Generator for Artists and Hobbyists',
+	description: 'AI-Powered Non-Realistic Daruma Generator for Artists & Hobbyists',
 };
 
 export default function RootLayout({
