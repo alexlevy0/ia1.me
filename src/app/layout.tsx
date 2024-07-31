@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
 	title: 'IA1.me',
-	description: 'AI-Powered Non-Realistic Daruma Generator for Artists & Hobbyists',
+	description: 'AI-Powered Non-Realistic Tamagotchi Generator for Artists & Hobbyists',
 };
 
 export default function RootLayout({
@@ -20,7 +20,7 @@ export default function RootLayout({
 			<body className={inter.className}>
 				<Provider>
 					<div className="gradient-bg">
-					<div id="root">{children}</div>
+						<div id="root">{children}</div>
 						<div className="gradients-container">
 							<div className="g1"></div>
 							<div className="g2"></div>

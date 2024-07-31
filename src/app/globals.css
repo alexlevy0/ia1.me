@@ -16,14 +16,15 @@
 	background: radial-gradient(#5a47ce, #232323 80%);
 }
 
-/* body {
+/*
+body {
 	margin: 0;
-}
+}*/
 
 .outline-text {
 	-webkit-text-stroke: 1px white;
 }
-
+/*
 html,
 body {
 	font-family: "Dongle", sans-serif;
